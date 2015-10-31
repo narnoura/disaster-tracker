@@ -1,5 +1,8 @@
-from unigram_stats import BasicQuery
+import sys
+from unigram_stats import UnigramStats
 
-unigram_freq = BasicQuery()
+# Save single-word stats
+unigram_stats = UnigramStats(sys.argv)
 
-unigram_freq.setup_query()
+# Parse articles for content words and print their frequencies
+unigram_stats.setup_query()

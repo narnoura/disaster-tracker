@@ -1,24 +1,46 @@
 import os
-from glob import glob
 import re
+import sys
+from glob import glob
 from ngram import NGram
 
-class BasicQuery(object):
+class UnigramStats(object):
 
-    def __init__(self):
+    def __init__(self, argv):
+        '''
+        Collect relevant stats about unigrams
+
+        Args:
+            argv (list): A list of arguments, passed from word_stats
+                - argv[0]: 'word_stats.py', typically
+                - argv[1]: The name of a directory containing .json
+                           articles to be analyzed
+                - argv[2]: The name of a stop-word list text file
+        '''
         self.corpus_dir = [] #List of string article titles
         self.word_dict = {}
         self.stop_words = []
+        self.argv = argv
 
 
     def read_from_dir(self):
-        self.corpus_dir = glob("/Users/MichaelPinkham/Desktop/NewsAnalysis/Migrant_crisis/*")
+        arg = str(self.argv[1])
+        dir_name = self.clean_arg(arg)
+        self.corpus_dir = glob(dir_name + "*")
             
         return self.corpus_dir
 
+
+    def clean_arg(self, arg):
+        end_slash = "/"
+        if arg[len(arg) - 1] is '/':
+            return arg
+        else:
+            return (arg + end_slash)
+
     
     def fill_stop_words(self):
-        with open("/Users/MichaelPinkham/Desktop/NewsAnalysis/stop_words.txt") as f:
+        with open(str(self.argv[2])) as f:
             for line in f:
                 self.stop_words.append(line.rstrip("\n"))
         
