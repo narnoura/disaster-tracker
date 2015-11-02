@@ -59,3 +59,4 @@ class CorpusParser(object):
         self.read_from_dir()
         self.fill_stop_words()
         self.parse_articles()
+        

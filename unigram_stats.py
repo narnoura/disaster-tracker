@@ -9,9 +9,8 @@ class UnigramStats(object):
         Collect relevant stats about unigrams
 
         Args:
-            corpus_parser: contains a list of articles and a dictionary of words
+            corpus_parser: contains a list of articles 
         '''
-        self.corpus_dir = corpus_parser.corpus_dir #List of string article titles
         self.articles = corpus_parser.articles
         self.word_dict = {}
         self.stop_words = corpus_parser.stop_words
@@ -43,5 +42,7 @@ class UnigramStats(object):
         for value in sorted_values:
             NGram.print_attrib(value)
 
+
     def print_stats(self):
         self.print_dict()
+
