@@ -16,6 +16,7 @@ class NGram(object):
         self.n = n
         self.gram = gram
         self.frequency = frequency
+        self.phrase = gram.split() 
 
 
     def increment_freq(self):
