@@ -25,4 +25,4 @@ class NGram(object):
 
 
     def print_attrib(self):
-        print self.n, self.gram, self.frequency
+        print str(self.n) + "\t" + self.gram + "\t" + str(self.frequency)
