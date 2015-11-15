@@ -3,6 +3,7 @@ from corpus_parser import CorpusParser
 from unigram_stats import UnigramStats
 from ngram_stats import NgramStats
 from proximate_words import ProximateWords
+from proximate_ngrams import ProximateNgrams
 from time import clock
 
 start = clock()
@@ -15,23 +16,25 @@ corpus_parser.parse()
 
 part1 = clock()
 
-
 # Get stats for the particular corpus
 #unigram_stats = UnigramStats(corpus_parser)
 #ngram_stats = NgramStats(corpus_parser)
-proximate_stats = ProximateWords(corpus_parser)
+#proximate_stats = ProximateWords(corpus_parser)
+proximate_ngrams = ProximateNgrams(corpus_parser)
 
 # Parse articles for content words and print their frequencies
 gsstart = clock()
 
 #unigram_stats.get_stats()
 #ngram_stats.get_stats()
-proximate_stats.get_stats()
+#proximate_stats.get_stats()
+proximate_ngrams.get_stats()
 gsstop = clock()
 
 #unigram_stats.print_stats()
 #ngram_stats.print_stats()
-proximate_stats.print_stats()
+#proximate_stats.print_stats()
+proximate_ngrams.print_stats()
 
 part2 = clock()
 
