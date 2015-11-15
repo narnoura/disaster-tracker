@@ -2,14 +2,21 @@ import os
 import re
 from ngram import NGram
 
-class NgramStats(object):
+class NGramStats(object):
 
     def __init__(self, corpus_parser):
         '''
-        Collect relevant stats about unigrams
+        Collect relevant stats about n-grams
 
         Args:
-            corpus_parser: contains a list of articles 
+            corpus_parser: an object containing 
+                a list of articles
+                a list of stop-words
+                the command-line arguments 'argv', such that 
+                    - argv[0]: 'word_stats.py'
+                    - argv[1]: path/to/articles 
+                    - argv[2]: path/to/stop_words
+                    - argv[3]: n (a phrase length)
         '''
         self.articles = corpus_parser.articles
         self.word_dict = {}

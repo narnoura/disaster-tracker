@@ -6,10 +6,19 @@ class ProximateWords(object):
 
     def __init__(self, corpus_parser):
         '''
-        Collect relevant stats about unigrams
+        Find frequent unigrams within 'offset' number of
+        words of a search 'term' 
 
         Args:
-            corpus_parser: contains a list of articles 
+            corpus_parser: contains 
+                a list of articles, 
+                a list of stop_words,
+                the command-line arguments 'argv', such that 
+                    - argv[0]: 'word_stats.py'
+                    - argv[1]: path/to/articles 
+                    - argv[2]: path/to/stop_words
+                    - argv[3]: offset (int)
+                    - argv[4]: term (the search term)
         '''
         self.articles = corpus_parser.articles
         self.word_dict = {}
@@ -23,13 +32,13 @@ class ProximateWords(object):
 
 
     def parse_string(self, string):
-	#third argument is distance to check
 	distance = int(self.argv[3])
         word_list = re.split("\W+", string)
 	for i in range(distance, len(word_list) - distance):
 	    if str(word_list[i]) == str(self.argv[4]):
 		for j in range(-distance, distance+1):	
 		    self.update_dict(word_list[i+j])
+
 
     def update_dict(self, word):
         if word.lower() not in self.stop_words:
