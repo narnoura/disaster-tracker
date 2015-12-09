@@ -5,6 +5,7 @@ from ngram_stats import NGramStats
 from proximate_words import ProximateWords
 from proximate_ngrams import ProximateNGrams
 from naive_sentiment import NaiveSentiment
+from key_sentences import KeySentences
 from time import clock
 
 start = clock()
@@ -22,7 +23,8 @@ part1 = clock()
 #ngram_stats = NGramStats(corpus_parser)
 #proximate_stats = ProximateWords(corpus_parser)
 #proximate_ngrams = ProximateNGrams(corpus_parser)
-naive_sentiment = NaiveSentiment(corpus_parser)
+#naive_sentiment = NaiveSentiment(corpus_parser)
+key_sentences = KeySentences(corpus_parser)
 
 # Parse articles for content words and print their frequencies
 gsstart = clock()
@@ -31,18 +33,20 @@ gsstart = clock()
 #ngram_stats.get_stats()
 #proximate_stats.get_stats()
 #proximate_ngrams.get_stats()
-naive_sentiment.get_stats()
+#naive_sentiment.get_stats()
+key_sentences.get_stats()
 gsstop = clock()
 
 #unigram_stats.print_stats()
 #ngram_stats.print_stats()
 #proximate_stats.print_stats()
 #proximate_ngrams.print_stats()
-naive_sentiment.print_stats()
+#naive_sentiment.print_stats()
+key_sentences.print_stats()
 
 part2 = clock()
 
 print "\n"
 print "corpus_parser time: " + str(part1 - start)
-print "naive sentiment time: " + str(part2 - part1)
-print "get stats (in naive sentiment) time: " + str(gsstop - gsstart)
+print "sentences time: " + str(part2 - part1)
+print "get stats (in sentences) time: " + str(gsstop - gsstart)
