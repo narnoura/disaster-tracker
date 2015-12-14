@@ -7,8 +7,7 @@ class CorpusAttributes(object):
 
 	def __init__(self, corpus_parser):
 		'''
-		Find frequent unigrams within 'offset' number of
-		words of a search 'term' 
+		Find frequent words with a given attribute (e.g. "Strong," "Race") 
 
 		Args:
 		    corpus_parser: contains 
@@ -25,8 +24,11 @@ class CorpusAttributes(object):
 		self.stop_words = corpus_parser.stop_words
 		self.argv = corpus_parser.argv
 		self.attr_dict = {}
+		self.attribute = ""
 		self.attr_count = 0
 
+	#reading in the Harvard Inquirer Lexicon
+	#contains most english words and whether or not they possess "attributes"
    	def get_attributes(self):
 		with open('inquirerbasic.csv', 'rU') as csvfile:
 			attr_reader = csv.reader(csvfile, dialect = csv.excel_tab)
@@ -41,7 +43,9 @@ class CorpusAttributes(object):
 				self.attr_dict[line[0]] = line_dict
 			return self.attr_dict
 				
-	def get_stats(self):
+	#reading in the corpus, looking for a specific attribute attr
+	def get_stats(self, attr):
+		self.attribute = attr
         	for article in self.articles:
             		self.parse_string(article)
 
@@ -54,7 +58,8 @@ class CorpusAttributes(object):
 
 	def update_dict(self, word):
 		if word in self.attr_dict:
-		    if self.argv[3] in self.attr_dict[word]:
+		    #if the word in the article has a given attribute
+		    if self.attribute in self.attr_dict[word]:
 			self.attr_count += 1
 			if word in self.word_dict:
 				self.word_dict[word].increment_freq()
