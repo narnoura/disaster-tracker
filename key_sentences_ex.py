@@ -1,6 +1,6 @@
 import sys
 from corpus_parser import CorpusParser
-from proximate_words import ProximateWords
+from key_sentences import KeySentences
 
 # Pick the corpus to parse
 corpus_parser = CorpusParser(sys.argv)
@@ -9,10 +9,10 @@ corpus_parser = CorpusParser(sys.argv)
 corpus_parser.parse()
 
 # Get stats for the particular corpus
-proximate_stats = ProximateWords(corpus_parser)
+key_sentences = KeySentences(corpus_parser)
 
 # Parse articles for content words and print their frequencies
-proximate_stats.get_stats()
+key_sentences.get_stats()
 
-proximate_stats.print_stats()
+key_sentences.print_stats()
 
