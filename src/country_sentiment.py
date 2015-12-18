@@ -51,12 +51,12 @@ class CountrySentiment(object):
                 self.neg_sentiment.append(line.rstrip("\n").decode("utf-8", "ignore"))
 
     def read_welcome(self):
-        with open("lexicons/welcome_list.txt") as w:
+        with open("lexicons/welcome-words.txt") as w:
             for line in w:
                 self.welcome.append(line.rstrip("\n").decode("utf-8", "ignore").lower())
 
     def read_unwelcome(self):
-        with open("lexicons/unwelcome_list.txt") as u:
+        with open("lexicons/unwelcome-words.txt") as u:
             for line in u:
                 self.unwelcome.append(line.rstrip("\n").decode("utf-8", "ignore").lower())
 
