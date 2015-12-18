@@ -2,7 +2,7 @@
 
 class NGram(object):
 
-    def __init__(self, n=1, gram="", frequency=0, sentiment_val=0, topic_ref_count = 0):
+    def __init__(self, n=1, gram="", frequency=0, sentiment_val=0, topic_ref_count = 0, welcome = 0):
         '''
         Represent an n-gram
 
@@ -23,6 +23,7 @@ class NGram(object):
         self.phrase = gram.split()
         self.sentiment_val = sentiment_val
         self.topic_ref_count = topic_ref_count
+        self.welcome = welcome
 
 
     def increment_freq(self):
@@ -33,7 +34,7 @@ class NGram(object):
     def print_attrib(self):
         print str(self.n) + "\t" + \
             self.gram + "\t" + \
-            str(self.frequency) + "\toccurence\t" + \
+            str(self.frequency) + "\toccurrence\t" + \
             str(self.sentiment_val) + "\tsentiment\t" + \
             str(self.topic_ref_count) + "\ttopic ref"
 
