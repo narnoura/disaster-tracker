@@ -1,7 +1,7 @@
 # disaster-tracker
 Study print media rhetoric relating to the Syrian refugee crisis. Run one of the _ex.py files to get started.  
 
-Corpus Parser: Saves JSON articles in a specified directory as Strings.
+* Corpus Parser: Saves JSON articles in a specified directory as Strings.
 
 * Unigram Stats: Counts the number of appearances of each word in a corpus.
     * unigram_stats_ex.py path/to/archive/ path/to/stop-word-list  
@@ -15,6 +15,7 @@ Corpus Parser: Saves JSON articles in a specified directory as Strings.
     * proximate_ngrams_ex.py path/to/archive/ path/to/stop-word-list (n-gram length) (word to look for) (offset)
 
 * Naive Sentiment: 
+    * naive_sentiment_ex.py path/to/archive/ path/to/stop-word-list (n-gram length) (word to look for) (offset)
 
 * Aggregate Attributes: Lists the number of words with a given attribute in the corpus in order of frequency.
     * attribute_agg_ex.py path/to/archive/ path/to/stop-word-list	
