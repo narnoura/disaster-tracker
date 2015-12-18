@@ -7,6 +7,7 @@ Study print media rhetoric relating to the Syrian refugee crisis. Run one of the
     * unigram_stats_ex.py path/to/archive/ path/to/stop-word-list  
 
 * N-gram Stats: Counts the number of appearances of any phrase in a corpus.
+    * ngram_stats_ex.py path/to/archive/ path/to/stop-word-list (n-gram length)
 
 * Proximate Unigrams: Lists the words near a given word in a corpus.
     * proximate_words_ex.py path/to/archive/ path/to/stop-word-list (offset distance) (word to look for)  
@@ -24,6 +25,6 @@ Study print media rhetoric relating to the Syrian refugee crisis. Run one of the
     * attribute_agg_ex.py path/to/archive/ path/to/stop-word-list attribute	
 
 A few notes:
-- There must be files ./lexicon/positive-words.txt and ./lexicons/negative-words.txt to run Naive Sentiment
+- There must be files ./lexicons/positive-words.txt and ./lexicons/negative-words.txt to run aive Sentiment
 - A stop word list must be present. Many such lists are available online.
 - The Harvard Inquirer Excel file must be saved as a .csv and be in ./lexicons/inquirerbasic.csv 
