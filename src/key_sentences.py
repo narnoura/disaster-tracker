@@ -26,10 +26,10 @@ class KeySentences(object):
         self.neg_sentiment = []
         self.read_pos_sentiment()
         self.read_neg_sentiment()
-        self.topic_list = ["prejudice", "racism", "xenophobia", "Muslim", "anti-Muslim", 
-            "foreigner", "anti-foreigner", "welcome" "assimilate", "integrate", "welcome", 
-            "arrive", "border", "refugees", "migrants", "Syrians", "asylum-seeker", 
-            "immigrant", "emigre", "thousands", "hundreds", "millions", "children", "camp"]      
+        self.topic_list = ["prejudice", "racism", "xenophobia", "Muslim", "anti", 
+            "foreigner", "government", "assimilate", "integrate", "welcome", 
+            "arrive", "border", "borders", "refugee", "migrant", "seeker", 
+            "immigrant", "thousands", "hundreds", "millions", "children", "camp"]      
 
 
     
