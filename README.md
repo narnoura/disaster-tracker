@@ -3,10 +3,10 @@ Study print media rhetoric relating to the Syrian refugee crisis. Run one of the
 
 Corpus Parser: Saves JSON articles in a specified directory as Strings.
 
-Unigram Stats: Counts the number of appearances of each word in a corpus.
-    #$ unigram_stats_ex.py path/to/archive/ path/to/stop-word-list  
+* Unigram Stats: Counts the number of appearances of each word in a corpus.
+    * unigram_stats_ex.py path/to/archive/ path/to/stop-word-list  
 
-N-gram Stats: Counts the number of appearances of any phrase in a corpus.
+*N-gram Stats: Counts the number of appearances of any phrase in a corpus.
 
 Proximate Unigrams: Lists the words near a given word in a corpus.
     #$ proximate_words_ex.py path/to/archive/ path/to/stop-word-list (offset distance) (word to look for)  
