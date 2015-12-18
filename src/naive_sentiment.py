@@ -36,13 +36,13 @@ class NaiveSentiment(object):
 
     
     def read_pos_sentiment(self):
-        with open("positive-words.txt") as p:
+        with open("lexicons/positive-words.txt") as p:
             for line in p:
                 self.pos_sentiment.append(line.rstrip("\n").decode("utf-8", "ignore"))
 
 
     def read_neg_sentiment(self):
-        with open("negative-words.txt") as n:
+        with open("lexicons/negative-words.txt") as n:
             for line in n:
                 self.neg_sentiment.append(line.rstrip("\n").decode("utf-8", "ignore"))
 

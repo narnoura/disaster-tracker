@@ -30,7 +30,7 @@ class CorpusAttributes(object):
 	#reading in the Harvard Inquirer Lexicon
 	#contains most english words and whether or not they possess "attributes"
    	def get_attributes(self):
-		with open('inquirerbasic.csv', 'rU') as csvfile:
+		with open('./lexicons/inquirerbasic.csv', 'rU') as csvfile:
 			attr_reader = csv.reader(csvfile, dialect = csv.excel_tab)
 			for row in attr_reader:
 				line = row[0].split(',')
