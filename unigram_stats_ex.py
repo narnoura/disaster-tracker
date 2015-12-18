@@ -1,4 +1,5 @@
 import sys
+sys.path.append('./src/')
 from corpus_parser import CorpusParser
 from unigram_stats import UnigramStats
 
