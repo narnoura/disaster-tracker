@@ -1,6 +1,6 @@
 import sys
 from corpus_parser import CorpusParser
-from naive_sentiment import NaiveSentiment
+from src/naive_sentiment import NaiveSentiment
 
 # Pick the corpus to parse
 corpus_parser = CorpusParser(sys.argv)
